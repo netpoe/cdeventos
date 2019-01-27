@@ -1,0 +1,43 @@
+@import "sass/styles";
+
+.claim {
+  border: 2px solid rgba(white, 0.5);
+  border-radius: $border-radius;
+  color: rgba(white, 0.7);
+  padding: get-spacer(4);
+  h1 {
+    font-size: $h5-font-size;
+    margin: 0;
+  }
+  .name {
+    @include alt-bold;
+    font-size: $h4-font-size;
+    color: white;
+  }
+  strong {
+    color: white;
+  }
+}
+
+#intro {
+  .left,
+  .right {
+    @include flex-column-center;
+    min-height: 100vh;
+  }
+  &.section {
+    padding: 0;
+  }
+  @include media-breakpoint-down(sm) {
+    .left {
+      margin-bottom: get-spacer(3);
+    }
+    .left,
+    .right {
+      min-height: auto;
+    }
+    &.section {
+      @include section-padding;
+    }
+  }
+}

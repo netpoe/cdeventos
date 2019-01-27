@@ -1,0 +1,72 @@
+@import "sass/styles";
+
+.footer {
+  background-color: darken($black, 3%);
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  @include media-breakpoint-down(sm) {
+    padding: get-spacer(2) 0;
+    position: relative;
+  }
+
+  .footer-left,
+  .footer-right {
+    @include flex-column-center;
+    min-height: $footer-height;
+    @include media-breakpoint-down(sm) {
+      padding-bottom: get-spacer(2);
+      padding-top: get-spacer(2);
+      min-height: auto;
+    }
+  }
+
+  .logo {
+    text-align: right;
+    img {
+      height: auto;
+      width: 70px;
+    }
+  }
+
+  .social-nav {
+    a {
+      margin-right: get-spacer(3);
+      font-size: $h5-font-size;
+      color: rgba(white, 0.7);
+      text-decoration: none;
+      display: inline-block;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .footer-right {
+    text-align: right;
+    @include media-breakpoint-down(sm) {
+      text-align: left;
+    }
+  }
+
+  .email {
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+  }
+
+  .email-mobile {
+    font-size: $font-size-base;
+    color: rgba(white, 0.7);
+    text-decoration: none;
+    color: $yellow;
+    display: none;
+    @include media-breakpoint-down(sm) {
+      display: inline-block;
+    }
+  }
+}

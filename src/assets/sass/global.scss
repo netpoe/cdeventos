@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+@import "sass/styles";
+
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/print";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/bootstrap-grid";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/input-group";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/utilities";
+
+@import "sass/ebm-fonts";
+@import "sass/ebm-bootstrap-overrides";
+@import "ebm/control/ebm-container-control";
+@import "ebm/modules/ebm-header";
+@import "sass/ebm-icons";
+@import "sass/ebm-global";
+@import "sass/styles";
+
+html, body {
+  background-color: $black;
+}
+
+body {
+  font-size: 16px;
+}
+
+.header {
+  background-color: transparent;
+  position: absolute;
+  z-index: 100;
+  border: none;
+  width: 100%;
+  right: 0;
+  left: 0;
+  top: 0;
+  @include media-breakpoint-down(sm) {
+    .header-left,
+    .header-right {
+      height: 81px;
+    }
+  }
+  .logo {
+    img {
+      width: 180px;
+    }
+    @include media-breakpoint-down(sm) {
+      img {
+        width: 98px;
+      }
+    }
+  }
+}
+
+.site-wrapper {
+  > .section {
+    &:last-child {
+      padding-bottom: $footer-height * 2;
+    }
+  }
+}
+
+.section {
+  @include section-padding;
+}
+
+.highcharts-credits {
+  display: none;
+}
+
+.embedly-card {
+  .embdscl0 {
+    display: none;
+  }
+}
+
+#intro {
+  .info-block {
+    .ens-addresses {
+      h4, label {
+        @include bold;
+      }
+      h4 {
+        font-size: $font-size-base;
+      }
+      label {
+        text-transform: uppercase;
+        line-height: 12px;
+        display: block;
+        margin: 0;
+      }
+      p, h4 {
+        margin-bottom: get-spacer(3);
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.eth-address {
+  @include media-breakpoint-down(sm) {
+    @include text-truncate;
+    display: inline-block;
+    max-width: 180px;
+  }
+}
+
+// keep-desktop-padding
+@include media-breakpoint-down(sm) {
+  #intro,
+  #how-to,
+  #details,
+  #roadmap,
+  #facks,
+  #about {
+    &.section {
+      padding-bottom: $footer-height;
+    }
+  }
+}
+
+$rem-percentage: 1.475;
+$rem-percentage-2: 1.375;
+@include media-breakpoint-down(sm) {
+  h1, .h1 { font-size: $h1-font-size / $rem-percentage; }
+  h2, .h2 { font-size: $h2-font-size / $rem-percentage; }
+  h3, .h3 { font-size: $h3-font-size / $rem-percentage; }
+  h4, .h4 { font-size: $h4-font-size / $rem-percentage-2; }
+  h5, .h5 { font-size: $h5-font-size / $rem-percentage-2; }
+  h6, .h6 { font-size: $h6-font-size / $rem-percentage-2; }
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    line-height: 1.35;
+  }
+}

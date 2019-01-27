@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/mixins";
+@import "sass/bootstrap-variables";
+
+// EBM variables
+@import "sass/ebm-variables";
+@import "ebm/functions/ebm-functions";
+@import "ebm/helpers/ebm-helpers";
+@import "sass/ebm-fonts-setup";
+
+$footer-height: 70px;
+
+@mixin main {
+  position: relative;
+  min-height: 100vh;
+
+  @include media-breakpoint-down(sm) {
+    min-height: 50vh;
+  }
+}
+
+@mixin section-padding {
+  padding-bottom: $footer-height;
+  padding-top: $footer-height;
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 70px;
+  }
+}
+
+@mixin menu-item {
+  @include flex-column-center;
+  @include normalize-text;
+  border-radius: $border-radius;
+  margin-bottom: get-spacer(3);
+  background-color: white;
+  border: 3px solid $black;
+  padding: get-spacer(3);
+  text-decoration: none;
+  min-height: 160px;
+  color: $black;
+  @include media-breakpoint-down(sm) {
+    min-height: 98px;
+  }
+  &:hover {
+    background-color: $black;
+    color: white;
+    h3 {
+      @include bold;
+    }
+  }
+  &.main {
+    background-color: $yellow;
+    border: 3px solid white;
+    h3 {
+      @include bold;
+    }
+    &:hover {
+      background-color: $black;
+    }
+  }
+  &.about {
+    @include flex-align-center;
+    .logo {
+      display: none;
+      width: 180px;
+    }
+    &:hover {
+      .logo {
+        display: block;
+      }
+      h3 {
+        display: none;
+      }
+    }
+  }
+}

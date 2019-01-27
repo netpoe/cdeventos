@@ -1,0 +1,14 @@
+@import "sass/styles";
+
+#menu {
+  min-height: 100vh;
+  .menu-item {
+    @include menu-item;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .token-distro {
+      display: none;
+    }
+  }
+}
